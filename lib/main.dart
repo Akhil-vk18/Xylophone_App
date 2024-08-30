@@ -1,9 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(XylophoneApp());
 }
 
+void playSound(int tile_number) {
+  final player = AudioPlayer();
+  player.play(AssetSource('note$tile_number.wav'));
+}
+
+
+Expanded TileWidget(backgroundColor,tile_number){
+
+  return Expanded(
+    child: TextButton(
+      onPressed: () {
+        playSound(tile_number);
+      },
+      child: Text(''),
+      style:  TextButton.styleFrom(
+          enableFeedback: false,
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(side: BorderSide.none)),
+    ),
+
+  );
+
+}
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
 
@@ -17,56 +41,15 @@ class XylophoneApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.red),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.orange),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.yellow),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.green.shade400),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.green),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.blue
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(''),
-                    style: TextButton.styleFrom(backgroundColor: Colors.purple),
-                  ),
-                )
+
+                TileWidget(Colors.red, 1),
+                TileWidget(Colors.orange, 2),
+                TileWidget(Colors.yellow, 3),
+                TileWidget(Colors.green, 4),
+                TileWidget(Colors.greenAccent, 5),
+                TileWidget(Colors.blue, 6),
+                TileWidget(Colors.purple, 7),
+
               ],
             ),
           ),
