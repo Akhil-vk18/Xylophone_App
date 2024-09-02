@@ -2,6 +2,15 @@
 
 Xylophone using flutter
 
+
+
+
+The Xylophone App allows users to play different xylophone notes by tapping on colorful tiles. Each tile triggers a unique sound, providing an interactive and engaging way to explore musical notes.
+
+
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
