@@ -1,6 +1,6 @@
 # Xylophone App
 
-The Xylophone App lets users play musical notes by tapping colorful tiles, each producing a unique sound. This app is built using various programming languages and tools.
+The Xylophone App lets users play musical notes by tapping colorful tiles, each producing a unique sound. This app is built using Flutter .
 
 ## Features
 
